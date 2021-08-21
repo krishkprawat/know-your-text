@@ -7,7 +7,6 @@ function Textform(props) {
   };
 
   const handleChange = (event) => {
-    console.log("click changed");
     setText(event.target.value);
   };
 
