@@ -6,28 +6,56 @@ function Textform(props) {
     setText(newText);
   };
 
+  const handleLowerClick = () => {
+    let newText = text.toLowerCase();
+    setText(newText);
+  };
+
+  const handleClear = () => {
+    let newText = "";
+    setText(newText);
+  };
+
   const handleChange = (event) => {
+    //onchange fucntion is use for handle text value
     setText(event.target.value);
   };
 
-  const [text, setText] = useState("enter the text");
+  const [text, setText] = useState("");
 
   return (
-    <div>
-      <h1>{props.heading}</h1>
-      <div className="mb-3">
-        <textarea
-          className="form-control"
-          value={text}
-          onChange={handleChange}
-          id="myBox"
-          rows="3"
-        ></textarea>
+    <>
+      <div className="container">
+        <h1>{props.heading}</h1>
+        <div className="mb-3">
+          <textarea
+            className="form-control"
+            value={text}
+            onChange={handleChange}
+            id="myBox"
+            rows="3"
+          ></textarea>
+        </div>
+        <button className="btn btn-primary mx-2" onClick={handleClick}>
+          Convert to uppercase
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleLowerClick}>
+          Convert to Lowerrcase
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleClear}>
+          Clear Text
+        </button>
       </div>
-      <button className="btn btn-primary" onClick={handleClick}>
-        Convert to uppercase
-      </button>
-    </div>
+      <div className="container my-3">
+        <h2> your text summary</h2>
+        <p>
+          {" "}
+          Total words {text.length}, {text.split(" ").length} characters here
+        </p>
+        <h3> preview</h3>
+        <p>{text}</p>
+      </div>
+    </>
   );
 }
 
