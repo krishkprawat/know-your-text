@@ -20,12 +20,14 @@ function About() {
       setMyStyle({
         color: "white",
         backgroundColor: "black",
+        border: "1px solid white",
       });
       setBtntext("Enable Light Mode");
     }
   };
   return (
-    <div className="container">
+    <div className="container" style={myStyle}>
+      <h2>About Us</h2>
       <div classNameName="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">

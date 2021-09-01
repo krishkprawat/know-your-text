@@ -11,6 +11,11 @@ function Textform(props) {
     setText(newText);
   };
 
+  const handleSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
+
   const handleClear = () => {
     let newText = "";
     setText(newText);
@@ -44,6 +49,9 @@ function Textform(props) {
         </button>
         <button className="btn btn-primary mx-2" onClick={handleClear}>
           Clear Text
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleSpaces}>
+          Remove extra spaces
         </button>
       </div>
       <div className="container my-3">
