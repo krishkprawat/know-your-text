@@ -4,21 +4,25 @@ function Textform(props) {
   const handleClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("converted to uppercase.", "success");
   };
 
   const handleLowerClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("converted to Lowercase.", "success");
   };
 
   const handleSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("extra spaces removed..", "success");
   };
 
   const handleClear = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text cleared..", "success");
   };
 
   const handleChange = (event) => {
