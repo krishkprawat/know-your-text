@@ -1,10 +1,9 @@
 import Navbar from "./components/Navbar";
 import "./App.css";
 import Textform from "./components/Textform";
-import About from "./components/about";
+//import About from "./components/about";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -33,25 +32,17 @@ function App() {
   };
   return (
     <>
-      <Router>
-        <Navbar title="Know-your-Text" mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <div className="container my-3">
-          <Switch>
-            <Route exact path="/about">
-              <About mode={mode} />
-            </Route>
+      <Navbar title="textutils" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-3">
+        {/*<About mode={mode} />*/}
 
-            <Route exact path="/">
-              <Textform
-                showAlert={showAlert}
-                heading="Try Textutils: Play with texts."
-                mode={mode}
-              />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+        <Textform
+          showAlert={showAlert}
+          heading="Try Textutils: Play with texts."
+          mode={mode}
+        />
+      </div>
     </>
   );
 }
