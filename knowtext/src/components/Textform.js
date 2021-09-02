@@ -90,7 +90,8 @@ function Textform(props) {
         <h2> your text summary</h2>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
+              //regex for remove new line in text box//
               //for remove, by default space which is showing in text summary//
               return element.length !== 0;
             }).length
