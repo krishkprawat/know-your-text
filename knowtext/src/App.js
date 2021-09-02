@@ -39,13 +39,13 @@ function App() {
         <div className="container my-3">
           <Switch>
             <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route>
 
             <Route exact path="/">
               <Textform
                 showAlert={showAlert}
-                heading="Enter your text"
+                heading="Try Textutils: Play with texts."
                 mode={mode}
               />
             </Route>
