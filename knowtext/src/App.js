@@ -33,7 +33,7 @@ function App() {
   };
   return (
     <>
-      <router>
+      <Router>
         <Navbar title="Know-your-Text" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
@@ -51,7 +51,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-      </router>
+      </Router>
     </>
   );
 }
