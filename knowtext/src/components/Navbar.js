@@ -9,7 +9,7 @@ function Navbar(props) {
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#" />
-        Textutils Home
+        {props.title}
         <a />
         <button
           className="navbar-toggler"
